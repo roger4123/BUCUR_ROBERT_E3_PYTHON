@@ -46,7 +46,8 @@ async def quiz(context):
     user_id = context.author.id
 
     if user_id in user_sessions:
-        await context.send("You already have an active question which you haven't answered yet! (Tip: use `@answer <your_answer>`)")
+        session = user_sessions[user_id]
+        await context.send(f"⚠️ **You have an active question!**\n\n**Question:** {session['question_text']}\n\nType `@answer <answer>` or `@skip` to move on.")
         return
     
     conn = get_db_connection()
@@ -74,7 +75,8 @@ async def quiz(context):
     
     user_sessions[user_id] = {
         'question_id': q_id,
-        'correct_answer': q_answer
+        'correct_answer': q_answer,
+        'question_text' : q_text
     }
 
     options_str = "\n".join([f"- {opt}" for opt in options])
@@ -134,5 +136,99 @@ async def stats(context):
     else:
         await context.send("No stats found. Play a quiz first!")
 
+@bot.command()
+async def skip(context):
+    """
+    Get the next question.
+
+    When a user has an active question, he has the option to skip it if he doesn't know the answer.
+    The next question is automatically presented.
+    """
+    user_id = context.author.id
+
+    if user_id not in user_sessions:
+        await context.send("Nothing to skip! Type `@quiz` to start.")
+        return
+    
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+        # do i count it as incorrect or not?
+    # session_data = user_sessions[user_id]
+    # correct_answer = session_data['correct_answer']
+    # question_id = session_data['question_id']
+
+    # cursor.execute('UPDATE users SET incorrect_count = incorrect_count + 1, quizzes_taken = quizzes_taken + 1 WHERE user_id = ?', (user_id,))
+    # cursor.execute('INSERT INTO answered_questions (user_id, question_id) VALUES (?, ?)', (user_id, question_id))
+    # conn.commit()
+    # conn.close()
+
+    del user_sessions[user_id]
+    
+    await context.send(f"⏭️ Skipped!")
+    
+    # Get the next one
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute('INSERT OR IGNORE INTO users (user_id) VALUES (?)', (user_id,))
+    conn.commit()
+
+    cursor.execute('''
+        SELECT id, question_text, correct_answer, options_json 
+        FROM questions 
+        WHERE id NOT IN (SELECT question_id FROM answered_questions WHERE user_id = ?)
+        ORDER BY RANDOM() LIMIT 1
+    ''', (user_id,))
+    
+    row = cursor.fetchone()
+    conn.close()
+
+    if not row:
+        await context.send("🏆 You have answered all available Twenty One Pilots questions! Check your stats with `@stats`.")
+        return
+
+    q_id, q_text, q_answer, q_options_json = row
+    options = json.loads(q_options_json)
+
+    user_sessions[user_id] = {
+        'question_id': q_id,
+        'correct_answer': q_answer,
+    }
+
+    options_str = "\n".join([f"- {opt}" for opt in options])
+    await context.send(f"❓ Question Time! {q_text} \nOptions: \n{options_str} \n\nUse `@answer <your_answer>` to respond!")
+
+@bot.command()
+async def leaderboard(context):
+    """Display the top users globally."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    # top 10 users
+    cursor.execute("SELECT user_id, correct_count FROM users ORDER BY correct_count DESC LIMIT 10")
+    rows = cursor.fetchall()
+    conn.close()
+
+    if not rows:
+        await context.send("Leaderboard is empty.")
+        return
+    
+    message_lines = ["🏆 Global Leaderboard 🏆"]
+    
+    for index, (uid, score) in enumerate(rows, 1):
+        try:
+            user = context.guild.get_member(uid) or await bot.fetch_user(uid)
+            name = user.display_name
+        except:
+            name = "Unknown User"
+            
+        message_lines.append(f"#{index} {name} — {score} pts")
+
+    await context.send("\n".join(message_lines))
+
 if __name__=="__main__":
-    bot.run(DISCORD_TOKEN)
+    if DISCORD_TOKEN:
+        bot.run(DISCORD_TOKEN)
+    else:
+        print("Discord Token not configured!")
