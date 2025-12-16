@@ -1,11 +1,30 @@
 import sqlite3
 import json
+import os
+from contextlib import contextmanager
 
 DB_NAME = "trivia.db"
 
 def get_db_connection():
     """Establishes a connection to the SQlite database."""
     return sqlite3.connect(DB_NAME)
+
+@contextmanager
+def get_db_cursor():
+    """
+    Context manager for database connections.
+    Automatically handles commits, rollbacks, and closing connections.
+    """
+    conn = get_db_connection()
+    try:
+        cursor = conn.cursor()
+        yield conn, cursor
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
 
 def init_db():
     """Initializes the database, creates tables, and adds questions."""
@@ -29,7 +48,8 @@ def init_db():
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 question_text TEXT,
                 correct_answer TEXT,
-                options_json TEXT
+                options_json TEXT,
+                category TEXT DEFAULT 'General'
             )
         ''')
 
@@ -46,23 +66,28 @@ def init_db():
         cursor.execute('SELECT COUNT(*) FROM questions')
         if cursor.fetchone()[0] == 0:
             print("Populating database with questions...")
-            top_questions = [
-                ("What is the name of Tyler Joseph's ukulele?", "Lehua", ["Coco", "Lehua", "Stitch", "Uke"]),
-                ("Which album features the song 'Stressed Out'?", "Blurryface", ["Vessel", "Trench", "Blurryface", "Scaled and Icy"]),
-                ("What is the fictional city central to the Trench era lore?", "Dema", ["Voldsoy", "Dema", "Keons", "Nico"]),
-                ("Who is the drummer of Twenty One Pilots?", "Josh Dun", ["Tyler Joseph", "Chris Salih", "Nick Thomas", "Josh Dun"]),
-                ("Which song contains the lyrics: 'The sun will rise and we will try again'?", "Truce", ["Goner", "Trees", "Truce", "Car Radio"]),
-                ("What is the color scheme associated with the 'Scaled and Icy' era?", "Pink and Blue", ["Yellow and Black", "Red and Black", "Pink and Blue", "Green and Purple"]),
-                ("How many bishops are there in Dema?", "9", ["7", "9", "12", "5"]),
-                ("What was the name of the band's debut self-titled album?", "Twenty One Pilots", ["Regional at Best", "Vessel", "Twenty One Pilots", "No Phun Intended"]),
-                ("Which character represents Tyler's insecurities in the Blurryface era?", "Blurryface", ["Nico", "Clancy", "Blurryface", "Ned"]),
-                ("What is the name of the small alien creature that appears in the 'Chlorine' video?", "Ned", ["Fred", "Ned", "Ted", "Jim"])
-            ]
-            
-            for q, a, opts in top_questions:
-                cursor.execute('INSERT INTO questions (question_text, correct_answer, options_json) VALUES (?, ?, ?)', (q, a, json.dumps(opts)))
-            conn.commit()
-        
+
+            #refactoring logic for JSON mapping
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            json_path = os.path.join(base_dir, "21pilots_questions.json")
+
+            if os.path.exists(json_path):
+                with open(json_path, 'r', encoding='utf-8') as f:
+                    questions_data = json.load(f)
+
+                for item in questions_data:
+                        category = item.get('category', 'General')
+                        q = item['question']
+                        a = item['answer']
+                        opts = json.dumps(item['options'])
+
+                        cursor.execute('INSERT INTO questions (question_text, correct_answer, options_json, category) VALUES (?, ?, ?, ?)', (q, a, opts, category))
+                conn.commit()
+                print("Questions loaded successfully!")
+            else:
+                print("Error: 21pilots_questions.json not found!")
+        else:
+            print("Database already initialized and populated.")
         conn.close()
         return True
     
@@ -77,25 +102,21 @@ if __name__ == "__main__":
         print("Error: database wasn't initialized correctly!")
 
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_cursor() as (conn, cursor):
+            print("\n--CURRENT DB STATUS--")
+            
+            cursor.execute("SELECT COUNT(*) FROM questions")
+            q_count = cursor.fetchone()[0]
+            print(f"\nTotal Questions: {q_count}")
 
-        print("\n--CURRENT DB STATUS--")
-        
-        cursor.execute("SELECT COUNT(*) FROM questions")
-        q_count = cursor.fetchone()[0]
-        print(f"\nTotal Questions: {q_count}")
-
-        print("User Stats:")
-        cursor.execute("SELECT user_id, correct_count, incorrect_count, quizzes_taken FROM users")
-        users = cursor.fetchall()
-        
-        if users:
-            for u in users:
-                print(f"    User ID: {u[0]} | ✅ Correct: {u[1]} | ❌ Incorrect: {u[2]} | Total: {u[3]}")
-        else:
-            print("     No users found yet.")
-        
-        conn.close()
+            print("User Stats:")
+            cursor.execute("SELECT user_id, correct_count, incorrect_count, quizzes_taken FROM users")
+            users = cursor.fetchall()
+            
+            if users:
+                for u in users:
+                    print(f"    User ID: {u[0]} | ✅ Correct: {u[1]} | ❌ Incorrect: {u[2]} | Total: {u[3]}")
+            else:
+                print("     No users found yet.")
     except Exception as e:
         print(f"Error reading stats: {e}")

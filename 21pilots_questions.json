@@ -1,0 +1,302 @@
+[
+  {
+    "category": "General",
+    "question": "What is Tyler Joseph's middle name?",
+    "answer": "Robert",
+    "options": ["William", "Robert", "James", "Michael"]
+  },
+  {
+    "category": "General",
+    "question": "What is Josh Dun's middle name?",
+    "answer": "William",
+    "options": ["Robert", "Thomas", "William", "Christopher"]
+  },
+  {
+    "category": "General",
+    "question": "Which city is the band from?",
+    "answer": "Columbus, Ohio",
+    "options": ["Cleveland, Ohio", "Columbus, Ohio", "Detroit, Michigan", "Chicago, Illinois"]
+  },
+  {
+    "category": "General",
+    "question": "What is the name of the Twenty One Pilots fanbase?",
+    "answer": "The Skeleton Clique",
+    "options": ["The Banditos", "The Skeleton Clique", "The Pilots", "The Heathens"]
+  },
+  {
+    "category": "General",
+    "question": "What is the name of Tyler's wife?",
+    "answer": "Jenna",
+    "options": ["Debby", "Jenna", "Sarah", "Brenda"]
+  },
+  {
+    "category": "General",
+    "question": "What is the name of Josh's wife?",
+    "answer": "Debby",
+    "options": ["Jenna", "Debby", "Ashley", "Emma"]
+  },
+  {
+    "category": "General",
+    "question": "Who was the original bassist of the band?",
+    "answer": "Nick Thomas",
+    "options": ["Chris Salih", "Nick Thomas", "Josh Dun", "Mark Eshleman"]
+  },
+  {
+    "category": "General",
+    "question": "Who was the original drummer before Josh Dun?",
+    "answer": "Chris Salih",
+    "options": ["Nick Thomas", "Chris Salih", "Zack Joseph", "Jordan Dun"]
+  },
+  {
+    "category": "General",
+    "question": "What symbol is commonly used to represent the band?",
+    "answer": "|-/",
+    "options": ["|-/", "<|>", "||-//", "Ø"]
+  },
+  {
+    "category": "General",
+    "question": "What movie soundtrack features the song 'Heathens'?",
+    "answer": "Suicide Squad",
+    "options": ["Avengers", "Suicide Squad", "The Hunger Games", "Divergent"]
+  },
+  {
+    "category": "Albums",
+    "question": "In what year was 'Vessel' released?",
+    "answer": "2013",
+    "options": ["2011", "2013", "2015", "2012"]
+  },
+  {
+    "category": "Albums",
+    "question": "In what year was 'Blurryface' released?",
+    "answer": "2015",
+    "options": ["2013", "2015", "2016", "2014"]
+  },
+  {
+    "category": "Albums",
+    "question": "In what year was 'Trench' released?",
+    "answer": "2018",
+    "options": ["2017", "2018", "2019", "2016"]
+  },
+  {
+    "category": "Albums",
+    "question": "In what year was 'Scaled and Icy' released?",
+    "answer": "2021",
+    "options": ["2019", "2020", "2021", "2022"]
+  },
+  {
+    "category": "Albums",
+    "question": "What is the opening track of the album 'Trench'?",
+    "answer": "Jumpsuit",
+    "options": ["Levitate", "Jumpsuit", "Morph", "My Blood"]
+  },
+  {
+    "category": "Albums",
+    "question": "What is the closing track of the album 'Vessel'?",
+    "answer": "Truce",
+    "options": ["Trees", "Truce", "Goner", "Leave the City"]
+  },
+  {
+    "category": "Albums",
+    "question": "Which album cover features Tyler and Josh's grandfathers?",
+    "answer": "Vessel",
+    "options": ["Regional at Best", "Vessel", "Self Titled", "Blurryface"]
+  },
+  {
+    "category": "Albums",
+    "question": "Which album is known for its yellow color scheme?",
+    "answer": "Trench",
+    "options": ["Blurryface", "Scaled and Icy", "Trench", "Clancy"]
+  },
+  {
+    "category": "Albums",
+    "question": "Which song was the lead single for 'Scaled and Icy'?",
+    "answer": "Shy Away",
+    "options": ["Choker", "Saturday", "Shy Away", "The Outside"]
+  },
+  {
+    "category": "Albums",
+    "question": "What was the band's independently released debut album called?",
+    "answer": "Twenty One Pilots",
+    "options": ["Regional at Best", "No Phun Intended", "Twenty One Pilots", "Vessel"]
+  },
+  {
+    "category": "Lore",
+    "question": "What is the name of the fictional city in the Trench storyline?",
+    "answer": "Dema",
+    "options": ["Voldsoy", "Dema", "Trench", "Keons"]
+  },
+  {
+    "category": "Lore",
+    "question": "How many bishops govern Dema?",
+    "answer": "9",
+    "options": ["7", "9", "12", "5"]
+  },
+  {
+    "category": "Lore",
+    "question": "Who is the leader of the Nine Bishops?",
+    "answer": "Nico",
+    "options": ["Keons", "Andre", "Nico", "Lisden"]
+  },
+  {
+    "category": "Lore",
+    "question": "What is the name of the rebel group opposing Dema?",
+    "answer": "The Banditos",
+    "options": ["The Heathens", "The Clique", "The Banditos", "The Outsiders"]
+  },
+  {
+    "category": "Lore",
+    "question": "What small alien creature appears in the 'Chlorine' music video?",
+    "answer": "Ned",
+    "options": ["Fred", "Ned", "Ted", "Jim"]
+  },
+  {
+    "category": "Lore",
+    "question": "What does the character 'Blurryface' represent?",
+    "answer": "Insecurities",
+    "options": ["Anger", "Insecurities", "Creativity", "Hope"]
+  },
+  {
+    "category": "Lore",
+    "question": "What color tape do the Banditos use to cover their eyes/clothing?",
+    "answer": "Yellow",
+    "options": ["Red", "Yellow", "Blue", "Green"]
+  },
+  {
+    "category": "Lore",
+    "question": "Which bishop was betrayed and killed in 'The Outside' music video?",
+    "answer": "Keons",
+    "options": ["Nico", "Reisdro", "Keons", "Sacarver"]
+  },
+  {
+    "category": "Lore",
+    "question": "What is the religion/cult of Dema called?",
+    "answer": "Vialism",
+    "options": ["Neon Gravestones", "Vialism", "Morphism", "Nicoism"]
+  },
+  {
+    "category": "Lore",
+    "question": "What is the name of the protagonist in the lore storyline?",
+    "answer": "Clancy",
+    "options": ["Tyler", "Clancy", "Torchbearer", "Nico"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "Finish the lyric: 'My name is Blurryface and I...'",
+    "answer": "Care what you think",
+    "options": ["Don't care what you think", "Care what you think", "Want to be free", "Am your enemy"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "Which song contains: 'I've got a pet cheetah down in my basement'?",
+    "answer": "Pet Cheetah",
+    "options": ["Levitate", "Pet Cheetah", "Jumpsuit", "Nico and the Niners"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "Finish the lyric: 'Wish we could turn back time...'",
+    "answer": "To the good old days",
+    "options": ["To the good old days", "To when we were young", "Before the stress", "To yesterday"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "From 'Car Radio': 'I ponder of something...'",
+    "answer": "Great",
+    "options": ["Terrifying", "Great", "Bad", "Real"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "Finish the lyric: 'Sippin' on straight...'",
+    "answer": "Chlorine",
+    "options": ["Chlorine", "Chemicals", "Water", "Gasoline"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "From 'Holding On To You': 'Lean with it, rock with it, when we gonna...'",
+    "answer": "Stop with it",
+    "options": ["Roll with it", "Stop with it", "Go with it", "Flow with it"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "From 'Lane Boy': 'Will they be alive...'",
+    "answer": "Tomorrow",
+    "options": ["Tomorrow", "Forever", "Next year", "In time"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "From 'House of Gold': 'She asked me, Son when I grow...'",
+    "answer": "Old",
+    "options": ["Old", "Cold", "Gone", "Weak"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "Finish the lyric: 'Stay alive, stay alive...'",
+    "answer": "For me",
+    "options": ["For me", "For you", "For us", "For now"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "From 'Tear in My Heart': 'She's the tear in my...'",
+    "answer": "Heart",
+    "options": ["Soul", "Heart", "Life", "World"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "From 'Ride': 'I'd die for you, that's easy to say...'",
+    "answer": "We have a list of people that we would take",
+    "options": ["We have a list of people that we would take", "But I don't know if I can show", "But living is harder", "I'm falling for you"]
+  },
+  {
+    "category": "Music Videos",
+    "question": "In which music video does Tyler shave his head?",
+    "answer": "Car Radio",
+    "options": ["Car Radio", "Stressed Out", "Levitate", "Guns for Hands"]
+  },
+  {
+    "category": "Music Videos",
+    "question": "What happens to the car in the 'Heavydirtysoul' music video?",
+    "answer": "It burns",
+    "options": ["It crashes", "It burns", "It flies", "It sinks"]
+  },
+  {
+    "category": "Music Videos",
+    "question": "What color confetti typically ends a Twenty One Pilots show during 'Trees'?",
+    "answer": "Red",
+    "options": ["Yellow", "Red", "White", "Blue"]
+  },
+  {
+    "category": "General",
+    "question": "What is the name of Tyler Joseph's mother?",
+    "answer": "Kelly",
+    "options": ["Kelly", "Mary", "Susan", "Linda"]
+  },
+  {
+    "category": "General",
+    "question": "How many siblings does Tyler Joseph have?",
+    "answer": "3",
+    "options": ["2", "3", "4", "1"]
+  },
+  {
+    "category": "General",
+    "question": "What is the name of the first song on 'Regional at Best'?",
+    "answer": "Guns for Hands",
+    "options": ["Kitchen Sink", "Guns for Hands", "Holding On To You", "Ode to Sleep"]
+  },
+  {
+    "category": "General",
+    "question": "Which song was released as a standalone single during the 2020 quarantine?",
+    "answer": "Level of Concern",
+    "options": ["Christmas Saves The Year", "Level of Concern", "Saturday", "Choker"]
+  },
+  {
+    "category": "Lore",
+    "question": "What flower is associated with the lore and the 'Jumpsuit' video?",
+    "answer": "Gerbera Daisy",
+    "options": ["Rose", "Sunflower", "Gerbera Daisy", "Lily"]
+  },
+  {
+    "category": "Lyrics",
+    "question": "From 'Migraine': 'Am I the only one I know, waging my...'",
+    "answer": "Wars behind my face",
+    "options": ["Wars behind my face", "Battles in my mind", "Wars in my head", "Fights inside my soul"]
+  }
+]

@@ -1,0 +1,33 @@
+16-12-2025 20:09:50 - INFO - logging in using static token
+16-12-2025 20:09:51 - INFO - Shard ID None has connected to Gateway (Session ID: 865171b368fee430a439c286d3968188).
+16-12-2025 20:09:53 - INFO - Bot logged in as ClancyBot.
+16-12-2025 20:09:53 - INFO - Database trivia.db initialized successfuly.
+16-12-2025 20:10:15 - INFO - logging in using static token
+16-12-2025 20:10:16 - INFO - Shard ID None has connected to Gateway (Session ID: 9ee0bdf7218713d3975182452797d66f).
+16-12-2025 20:10:18 - INFO - Bot logged in as ClancyBot.
+16-12-2025 20:10:18 - INFO - Database trivia.db initialized successfuly.
+16-12-2025 20:10:29 - INFO - Displaying stats for robert_bucur (ID 381422091431313410)
+16-12-2025 20:10:32 - INFO - Sent question 3 (General) to user robert_bucur (ID 381422091431313410)
+16-12-2025 20:10:41 - INFO - User robert_bucur (ID 381422091431313410) has answered question 3 wrong
+16-12-2025 20:10:41 - INFO - Deleting current session for robert_bucur (ID 381422091431313410)
+16-12-2025 20:11:01 - INFO - User robert_bucur (ID 381422091431313410) doesn't have an active question yet.
+16-12-2025 20:11:07 - INFO - Sent question 48 (General) to user robert_bucur (ID 381422091431313410)
+16-12-2025 20:14:08 - INFO - Session timed out for user 381422091431313410
+16-12-2025 21:06:05 - INFO - logging in using static token
+16-12-2025 21:06:06 - INFO - Shard ID None has connected to Gateway (Session ID: 0fd0fcfa28465164be0835f498d33715).
+16-12-2025 21:06:08 - INFO - Bot logged in as ClancyBot.
+16-12-2025 21:06:08 - INFO - Database trivia.db initialized successfuly.
+16-12-2025 21:06:49 - INFO - Displaying leaderboard.
+16-12-2025 21:06:51 - INFO - Displaying stats for robert_bucur (ID 381422091431313410)
+16-12-2025 21:06:55 - INFO - Sent question 45 (General) to user robert_bucur (ID 381422091431313410)
+16-12-2025 21:07:09 - INFO - User robert_bucur (ID 381422091431313410) has answered question 45 wrong
+16-12-2025 21:07:09 - INFO - Deleting current session for robert_bucur (ID 381422091431313410)
+16-12-2025 21:07:23 - ERROR - Command error triggered: user_answer is a required argument that is missing.
+16-12-2025 21:07:23 - INFO - User robert_bucur (ID 381422091431313410) enterd an incomplete command.
+16-12-2025 21:07:28 - INFO - User robert_bucur (ID 381422091431313410) doesn't have an active question yet.
+16-12-2025 21:07:32 - INFO - Sent question 47 (General) to user robert_bucur (ID 381422091431313410)
+16-12-2025 21:07:41 - INFO - User robert_bucur (ID 381422091431313410) has answered question 47 wrong
+16-12-2025 21:07:41 - INFO - Deleting current session for robert_bucur (ID 381422091431313410)
+16-12-2025 21:08:05 - INFO - Sent question 40 (Lyrics) to user robert_bucur (ID 381422091431313410)
+16-12-2025 21:08:11 - INFO - User robert_bucur (ID 381422091431313410) scored a point. Question 40
+16-12-2025 21:08:11 - INFO - Deleting current session for robert_bucur (ID 381422091431313410)
